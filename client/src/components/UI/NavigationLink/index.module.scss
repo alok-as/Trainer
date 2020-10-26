@@ -1,0 +1,15 @@
+.navigation {
+	&__item {
+		&:not(:last-child) {
+			margin-right: 4.5rem;
+		}
+	}
+	&__link {
+		color: var(--color-white);
+		font-weight: 700;
+		font-size: 1.3rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+}

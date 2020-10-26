@@ -1,0 +1,23 @@
+.header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.2rem 0;
+	}
+}
+
+.navigation {
+	&__list {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		font-family: var(--secondary-font);
+	}
+}

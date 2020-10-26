@@ -1,0 +1,29 @@
+.heading {
+	font-family: var(--secondary-font);
+	text-transform: uppercase;
+
+	&__light {
+		color: var(--color-white);
+	}
+
+	&__dark {
+		color: var(--color-black);
+	}
+
+	&__primary {
+		font-size: 5.6rem;
+		font-weight: 600;
+		letter-spacing: 2rem;
+		line-height: 1.2;
+	}
+
+	&__secondary {
+		font-size: 8rem;
+	}
+
+	&__tertiary {
+		font-weight: 600;
+		letter-spacing: 4px;
+		font-size: 1.7rem;
+	}
+}

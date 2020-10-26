@@ -1,0 +1,31 @@
+.hamburger {
+	cursor: pointer;
+	border: 3px solid var(--color-white);
+	padding: 1.5rem 1rem;
+	border-radius: 0.8rem;
+	transition: transform 0.2s ease;
+
+	&__line {
+		width: 1.4rem;
+		height: 3px;
+		background-color: var(--color-white);
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: var(--color-white);
+		}
+
+		&::before {
+			top: -0.65rem;
+		}
+
+		&::after {
+			top: 0.65rem;
+		}
+	}
+}
