@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend for Trainer website",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd -f dev.env nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "Alok Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.10"
+  }
+}
