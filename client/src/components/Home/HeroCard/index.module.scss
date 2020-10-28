@@ -1,0 +1,50 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 8rem;
+	color: var(--color-white);
+	text-align: center;
+
+	&__title {
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-family: var(--secondary-font);
+		font-weight: 700;
+		letter-spacing: 3px;
+	}
+
+	&__paragraph {
+		margin: 2rem 0;
+	}
+
+	&__button {
+		background: none;
+		outline: none;
+		border: none;
+		font-family: var(--secondary-font);
+		text-transform: uppercase;
+		color: var(--color-white);
+		font-weight: 700;
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			bottom: -0.5rem;
+			left: 0;
+			width: 0;
+			height: 1px;
+			background-color: var(--color-white);
+			transition: width 0.3s ease;
+		}
+	}
+}

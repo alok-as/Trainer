@@ -1,0 +1,14 @@
+.exercise {
+	padding: 10rem 0;
+	background-color: var(--color-grey-3);
+
+	&__header {
+		text-align: center;
+	}
+
+	&__grid {
+		margin-top: 10rem;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

@@ -1,0 +1,32 @@
+.exercise {
+	position: relative;
+
+	&__image {
+		width: 100%;
+		max-height: 100%;
+	}
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 8%;
+		transform: translateY(-50%);
+	}
+
+	&__subtitle,
+	&__title {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: var(--secondary-font);
+	}
+
+	&__subtitle {
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+		margin-bottom: 1rem;
+	}
+
+	&__title {
+		letter-spacing: 4px;
+	}
+}

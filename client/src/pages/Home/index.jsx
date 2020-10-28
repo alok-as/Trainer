@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
-import { Hero } from "../../containers/Home";
+import { Hero, Manual, Highlight, Exercise } from "../../containers/Home";
 
 const Home = () => {
 	return (
 		<Fragment>
 			<Hero />
+			<Manual />
+			<Highlight />
+			<Exercise />
 		</Fragment>
 	);
 };

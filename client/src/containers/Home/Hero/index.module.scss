@@ -1,9 +1,10 @@
 .hero {
-	height: 85vh;
-
 	&__slider {
-		width: 100%;
-		height: 100%;
+		height: 85vh;
+	}
+
+	&__cards {
+		display: flex;
 	}
 }
 

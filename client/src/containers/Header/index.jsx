@@ -7,13 +7,13 @@ import PropTypes from "prop-types";
 
 const Header = ({ openSidebar }) => {
 	const [links, setLinks] = useState([
-		{ id: uuid, to: "/", name: "Home" },
-		{ id: uuid, to: "/gallery", name: "Pages" },
-		{ id: uuid, to: "/classses", name: "Classes" },
-		{ id: uuid, to: "/", name: "Portfolio" },
-		{ id: uuid, to: "/", name: "Blog" },
-		{ id: uuid, to: "/", name: "Shop" },
-		{ id: uuid, to: "/", name: "Elements" },
+		{ id: uuid(), to: "/", name: "Home" },
+		{ id: uuid(), to: "/gallery", name: "Pages" },
+		{ id: uuid(), to: "/classses", name: "Classes" },
+		{ id: uuid(), to: "/", name: "Portfolio" },
+		{ id: uuid(), to: "/", name: "Blog" },
+		{ id: uuid(), to: "/", name: "Shop" },
+		{ id: uuid(), to: "/", name: "Elements" },
 	]);
 
 	return (
@@ -24,7 +24,7 @@ const Header = ({ openSidebar }) => {
 					<nav className={classes.navigation}>
 						<ul className={classes.navigation__list}>
 							{links.map((link) => (
-								<NavigationLink to={link.to} name={link.name} />
+								<NavigationLink key={link.id} to={link.to} name={link.name} />
 							))}
 						</ul>
 					</nav>

@@ -1,0 +1,12 @@
+.highlight {
+	background-image: url("../../../assets/images/Home/Highlight/highlight-1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 65vh;
+	background-position: center;
+
+	&__cards {
+		display: flex;
+		align-items: center;
+	}
+}

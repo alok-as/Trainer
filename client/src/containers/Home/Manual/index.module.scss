@@ -1,0 +1,30 @@
+.manual {
+	padding: 10rem 0;
+	background-color: var(--color-grey-2);
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+
+		& > * {
+			flex-basis: 50%;
+		}
+	}
+
+	&__content {
+	}
+
+	&__heading {
+		font-weight: 700;
+		margin-bottom: 1.2rem;
+	}
+
+	&__paragraph {
+		color: var(--color-grey-1);
+		margin: 2rem 0 4rem 0;
+	}
+
+	&__banner {
+		padding-left: 10rem;
+	}
+}

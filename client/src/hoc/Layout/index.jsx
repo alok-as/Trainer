@@ -25,7 +25,7 @@ const Layout = () => {
 					<Route path="/gallery" component={Gallery} />
 				</Switch>
 			</main>
-			<footer>Footer</footer>
+			{/* <footer>Footer</footer> */}
 		</Fragment>
 	);
 };

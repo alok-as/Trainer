@@ -5,7 +5,7 @@ import image from "../../../assets/images/UI/logo.png";
 
 const Logo = () => {
 	return (
-		<Link className={classes.logo__wrapper}>
+		<Link className={classes.logo__wrapper} to="/">
 			<img className={classes.logo__image} src={image} alt="Brand Logo" />
 		</Link>
 	);
