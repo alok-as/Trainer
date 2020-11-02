@@ -1,0 +1,26 @@
+.request {
+	padding: 14rem 0;
+	background-image: url("../../../assets/images/Home/Request/request-back.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__header {
+		text-align: center;
+	}
+
+	&__form {
+		width: 70%;
+		margin: 0 auto;
+		margin-top: 5rem;
+		display: grid;
+		grid-column-gap: 3rem;
+		grid-row-gap: 1.2rem;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+	}
+
+	&__button {
+		margin-top: 3rem;
+		text-align: center;
+	}
+}

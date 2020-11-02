@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./index.module.scss";
 
 const ExerciseItem = ({ image, subtitle, title, color, area }) => {
-	console.log(color);
 	return (
 		<div
 			className={classes.exercise}

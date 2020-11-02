@@ -67,4 +67,4 @@ const Excercise = () => {
 	);
 };
 
-export default Excercise;
+export default React.memo(Excercise);

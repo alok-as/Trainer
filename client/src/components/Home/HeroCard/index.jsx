@@ -1,10 +1,12 @@
 import React from "react";
 import classes from "./index.module.scss";
 import PropTypes from "prop-types";
+import { Icon } from "../../UI";
 
 const HeroCard = ({ icon, title, content, color }) => {
 	return (
 		<div className={classes.card} style={{ backgroundColor: color }}>
+			<Icon icon={icon} iconStyle={classes.card__icon} />
 			<h4 className={classes.card__title}>{title}</h4>
 			<p className={classes.card__paragraph}>{content}</p>
 			<button className={classes.card__button}>Read more</button>

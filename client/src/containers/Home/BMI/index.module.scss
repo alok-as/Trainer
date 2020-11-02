@@ -1,0 +1,16 @@
+.bmi {
+	background-image: url("../../../assets/images/Home/BMI/BMI-1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 14rem 0;
+
+	&__wrapper {
+		display: flex;
+		gap: 10rem;
+
+		& > * {
+			flex-basis: 50%;
+		}
+	}
+}

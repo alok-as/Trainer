@@ -1,0 +1,18 @@
+.testimonials {
+	background-color: var(--color-grey-3);
+	padding: 14rem 0;
+	background-image: url("../../../assets/images/Home/Testimonials/testimonials-back.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__header {
+		text-align: center;
+	}
+
+	&__cards {
+		margin-top: 8rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+		grid-gap: 4rem;
+	}
+}

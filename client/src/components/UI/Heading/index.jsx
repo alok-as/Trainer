@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./index.module.scss";
 import PropTypes from "prop-types";
 
-const Heading = ({ type, color, children, className }) => {
+const Heading = ({ type, color, children, className, weight }) => {
 	const finalClass = [classes.heading];
 
 	switch (color) {

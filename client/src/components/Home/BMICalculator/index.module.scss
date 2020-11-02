@@ -1,0 +1,22 @@
+.bmi {
+	&__paragraph {
+		margin: 2rem 0;
+		font-size: 1.5rem;
+		line-height: 1.7;
+		color: var(--color-white);
+	}
+
+	&__form {
+		width: 100%;
+	}
+
+	&__field {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__button {
+		margin-top: 1.5rem;
+	}
+}

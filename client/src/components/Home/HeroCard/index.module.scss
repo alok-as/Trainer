@@ -7,6 +7,13 @@
 	color: var(--color-white);
 	text-align: center;
 
+	&__icon {
+		width: 4.5rem;
+		height: 4.5rem;
+		fill: var(--color-white);
+		margin-bottom: 4rem;
+	}
+
 	&__title {
 		font-size: 2rem;
 		text-transform: uppercase;

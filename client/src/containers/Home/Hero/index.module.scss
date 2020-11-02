@@ -1,6 +1,7 @@
 .hero {
 	&__slider {
 		height: 85vh;
+		position: relative;
 	}
 
 	&__cards {
@@ -28,5 +29,36 @@
 
 	&__button {
 		margin-top: 1.4rem;
+	}
+
+	&__icon {
+		fill: #d6d7d7;
+		width: 6rem;
+		height: 6rem;
+	}
+
+	&__previous,
+	&__next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all 0.4s ease;
+		cursor: pointer;
+	}
+
+	&__previous {
+		left: 4%;
+
+		&:hover {
+			left: 3%;
+		}
+	}
+
+	&__next {
+		right: 4%;
+
+		&:hover {
+			right: 3%;
+		}
 	}
 }

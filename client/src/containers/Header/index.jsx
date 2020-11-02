@@ -6,9 +6,10 @@ import { Logo, NavigationLink, Hamburger } from "../../components/UI";
 import PropTypes from "prop-types";
 
 const Header = ({ openSidebar }) => {
+	console.log("Header is rendered");
 	const [links, setLinks] = useState([
 		{ id: uuid(), to: "/", name: "Home" },
-		{ id: uuid(), to: "/gallery", name: "Pages" },
+		{ id: uuid(), to: "/gallery", name: "Gallery" },
 		{ id: uuid(), to: "/classses", name: "Classes" },
 		{ id: uuid(), to: "/", name: "Portfolio" },
 		{ id: uuid(), to: "/", name: "Blog" },
@@ -39,4 +40,4 @@ Header.propTypes = {
 	openSidebar: PropTypes.func.isRequired,
 };
 
-export default Header;
+export default React.memo(Header);

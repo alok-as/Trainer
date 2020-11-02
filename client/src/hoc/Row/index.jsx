@@ -1,8 +1,12 @@
 import React from "react";
 import classes from "./index.module.scss";
 
-const Row = ({ children }) => {
-	return <div className={classes.row}>{children}</div>;
+const Row = ({ children, className }) => {
+	const finalClass = [classes.row];
+	if (className) {
+		finalClass.push(className);
+	}
+	return <div className={finalClass.join(" ")}>{children}</div>;
 };
 
 export default Row;

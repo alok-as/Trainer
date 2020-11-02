@@ -36,4 +36,4 @@ const Manual = () => {
 	);
 };
 
-export default Manual;
+export default React.memo(Manual);

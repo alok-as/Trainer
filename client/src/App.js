@@ -5,7 +5,7 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/:page?" component={Layout} />
+				<Route path="/:page?" exact component={Layout} />
 			</Switch>
 		</Router>
 	);

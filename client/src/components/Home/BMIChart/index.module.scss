@@ -1,0 +1,38 @@
+.table {
+	margin-top: 2rem;
+	width: 100%;
+	border-collapse: collapse;
+
+	&__heading {
+		font-family: var(--secondary-font);
+		font-size: 2rem;
+		color: var(--color-white);
+		letter-spacing: 4px;
+		text-align: left;
+		padding: 1.2rem 4rem;
+
+		&:not(:last-child) {
+			border-right: 1px solid #e5e5e5;
+		}
+	}
+
+	&__row {
+		border-bottom: 1px dashed #e5e5e5;
+	}
+
+	&__data {
+		font-size: 1.5rem;
+		padding: 1.7rem 2rem 1.7rem 4rem;
+		color: var(--color-white);
+
+		&:not(:last-child) {
+			border-right: 1px dashed #e5e5e5;
+		}
+	}
+
+	&__foot {
+		margin-top: 2.4rem;
+		color: var(--color-white);
+		font-size: 1.4rem;
+	}
+}

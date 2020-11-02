@@ -1,12 +1,15 @@
 .highlight {
-	background-image: url("../../../assets/images/Home/Highlight/highlight-1.jpg");
+	background-image: url("../../../assets/images/Home/Highlight/highlight-back.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 65vh;
 	background-position: center;
+	background-attachment: fixed;
+	height: 65vh;
 
 	&__cards {
 		display: flex;
 		align-items: center;
+		height: 100%;
+		gap: 3rem;
 	}
 }

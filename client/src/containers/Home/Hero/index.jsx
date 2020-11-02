@@ -3,13 +3,15 @@ import { v4 as uuid } from "uuid";
 import classes from "./index.module.scss";
 import image1 from "../../../assets/images/Home/Hero/hero-1.jpg";
 import Row from "../../../hoc/Row";
-import { Heading, Button } from "../../../components/UI";
+import { Heading, Button, Icon } from "../../../components/UI";
+import sprites from "../../../assets/icons/sprites.svg";
 import { HeroCard } from "../../../components/Home";
 
 const Hero = () => {
 	const [cards, setCards] = useState([
 		{
 			id: uuid(),
+			icon: `${sprites}#icon-whatshot`,
 			title: "Training",
 			content:
 				"Arrival entered an if drawing request. How daughters not promotion few knowledge contented. Yet winter law behind number stairs garret excuse. Minuter we natural conduct gravity if pointed oh no. Am immediate unwilling of attempted admitting disposing it. Handsome opinions on am at it ladyship",
@@ -17,6 +19,7 @@ const Hero = () => {
 		},
 		{
 			id: uuid(),
+			icon: `${sprites}#icon-trophy`,
 			title: "Workout",
 			content:
 				"Arrival entered an if drawing request. How daughters not promotion few knowledge contented. Yet winter law behind number stairs garret excuse. Minuter we natural conduct gravity if pointed oh no. Am immediate unwilling of attempted admitting disposing it. Handsome opinions on am at it ladyship",
@@ -24,6 +27,7 @@ const Hero = () => {
 		},
 		{
 			id: uuid(),
+			icon: `${sprites}#icon-bolt`,
 			title: "Building",
 			content:
 				"Arrival entered an if drawing request. How daughters not promotion few knowledge contented. Yet winter law behind number stairs garret excuse. Minuter we natural conduct gravity if pointed oh no. Am immediate unwilling of attempted admitting disposing it. Handsome opinions on am at it ladyship",
@@ -31,7 +35,7 @@ const Hero = () => {
 		},
 	]);
 	return (
-		<section className={classes.hero}>
+		<section className={classes.hero} id="hero">
 			<div className={classes.hero__slider}>
 				<div className={classes.slide}>
 					<img
@@ -53,14 +57,31 @@ const Hero = () => {
 						</div>
 					</Row>
 				</div>
+				<div className={classes.slide__previous}>
+					<Icon
+						icon={`${sprites}#icon-arrow_back_ios`}
+						iconStyle={classes.slide__icon}
+					/>
+				</div>
+				<div className={classes.slide__next}>
+					<Icon
+						icon={`${sprites}#icon-arrow_forward_ios`}
+						iconStyle={classes.slide__icon}
+					/>
+				</div>
 			</div>
 			<div className={classes.hero__cards}>
 				{cards.map((card) => (
-					<HeroCard key={card.id} title={card.title} color={card.color} />
+					<HeroCard
+						key={card.id}
+						icon={card.icon}
+						title={card.title}
+						color={card.color}
+					/>
 				))}
 			</div>
 		</section>
 	);
 };
 
-export default Hero;
+export default React.memo(Hero);
