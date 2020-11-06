@@ -8,3 +8,4 @@ export { default as NavigationLink } from "./NavigationLink";
 export { default as Sidebar } from "./Sidebar";
 export { default as InputField } from "./InputField";
 export { default as ScrollToTop } from "./ScrollToTop";
+export { default as Thumbnail } from "./Thumbnail";

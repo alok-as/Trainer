@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useCallback } from "react";
+import React, { Fragment, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import { Header } from "../../containers";
+import { Header, Footer } from "../../containers";
 import { Sidebar } from "../../components/UI";
 import { Home, Gallery } from "../../pages";
 
@@ -27,7 +27,7 @@ const Layout = () => {
 					<Route path="/gallery" component={Gallery} />
 				</Switch>
 			</main>
-			{/* <footer>Footer</footer> */}
+			<Footer />
 		</Fragment>
 	);
 };
