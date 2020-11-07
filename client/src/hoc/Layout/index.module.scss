@@ -1,0 +1,9 @@
+.layout {
+	&__main {
+		transition: transform 0.4s ease;
+		position: relative;
+	}
+	&__collapse {
+		transform: translateX(-30%);
+	}
+}

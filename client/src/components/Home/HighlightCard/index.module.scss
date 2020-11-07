@@ -6,8 +6,13 @@
 	align-items: center;
 	text-align: center;
 
+	&:hover &__image {
+		animation: pop-up 0.5s ease-out 1 forwards;
+	}
+
 	&__image {
 		margin-bottom: 3rem;
+		transition: all 0.5s ease-out;
 	}
 
 	&__title {
@@ -17,5 +22,15 @@
 		font-weight: 700;
 		letter-spacing: 3px;
 		margin: 2rem 0 1rem 0;
+	}
+}
+
+@keyframes pop-up {
+	0% {
+		transform: translateY(-1rem);
+	}
+
+	100% {
+		transform: translateY(0);
 	}
 }

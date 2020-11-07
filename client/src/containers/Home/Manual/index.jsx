@@ -27,7 +27,7 @@ const Manual = () => {
 						</p>
 						<Button>Download Pdf</Button>
 					</div>
-					<div className={classes.manual__banner}>
+					<div className={classes.manual__banner} data-aos="fade-left">
 						<img src={image} alt="Manual Pdf Cover" />
 					</div>
 				</div>
