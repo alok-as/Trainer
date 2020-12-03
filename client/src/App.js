@@ -1,12 +1,17 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Layout from "./hoc/Layout";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { Layout, Auth } from "./hoc";
 
 function App() {
 	return (
 		<Router>
-			<Switch>
-				<Route path="/:page?" exact component={Layout} />
-			</Switch>
+			<Provider store={store}>
+				<Switch>
+					<Route path="/:page?" exact component={Layout} />
+					<Route path="/auth/user" component={Auth} />
+				</Switch>
+			</Provider>
 		</Router>
 	);
 }

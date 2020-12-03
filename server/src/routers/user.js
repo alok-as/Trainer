@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../config/multer");
 const passport = require("passport");
 
 const {
@@ -7,9 +8,10 @@ const {
 	loginUser,
 	getUserProfile,
 	logoutUser,
+	createContactCard,
 } = require("../controllers/user");
 
-router.post("/", registerUser);
+router.post("/register", upload.single("image"), registerUser);
 router.post("/login", loginUser);
 
 router.get(
@@ -23,5 +25,7 @@ router.get(
 	passport.authenticate("jwt", { session: false }),
 	logoutUser
 );
+
+router.get("/contact-card", createContactCard);
 
 module.exports = router;

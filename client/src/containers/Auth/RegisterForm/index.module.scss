@@ -1,0 +1,22 @@
+.form {
+	&__wrapper {
+		flex: 1;
+		padding: 6rem 8rem;
+		background-color: rgba(0, 0, 0, 0.7);
+		position: relative;
+	}
+
+	&__buttons {
+		position: absolute;
+		bottom: 8rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100% - 16rem);
+		height: 2rem;
+
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

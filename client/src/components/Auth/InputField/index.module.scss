@@ -1,0 +1,15 @@
+.field {
+	width: 60%;
+	padding: 1.4rem 2.4rem;
+	border: 1px solid var(--color-red-1);
+	background: none;
+	outline: none;
+	border-radius: 10rem;
+	font-family: var(--secondary-font);
+	color: var(--color-white);
+
+	&::placeholder {
+		color: var(--color-white);
+		text-transform: capitalize;
+	}
+}

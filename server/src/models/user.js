@@ -10,19 +10,6 @@ const userSchema = mongoose.Schema(
 			required: [true, "Username is required"],
 			trim: true,
 		},
-		email: {
-			type: String,
-			unique: true,
-			required: [true, "Email is required"],
-			lowercase: true,
-			trim: true,
-			validate: [isEmail, "Please Enter a Valid Email address"],
-		},
-		password: {
-			type: String,
-			required: [true, "Password is required"],
-			minlength: [8, "Password must be 8 characters long"],
-		},
 		phoneNumber: {
 			type: String,
 			required: true,
@@ -31,6 +18,63 @@ const userSchema = mongoose.Schema(
 				message: ({ value }) => `${value} is not a valid Phone Number`,
 			},
 		},
+		address: {
+			type: String,
+			required: [true, "Address is required"],
+			trim: true,
+		},
+		email: {
+			type: String,
+			unique: true,
+			required: [true, "Email is required"],
+			lowercase: true,
+			trim: true,
+			validate: [isEmail, "Please Enter a Valid Email address"],
+		},
+		dateOfBirth: {
+			type: Date,
+			required: [true, "Date of birth is required"],
+			trim: true,
+		},
+		age: {
+			type: Number,
+			required: [true, "Age is required"],
+		},
+		gender: {
+			type: "String",
+			enum: ["Male", "Female"],
+			required: true,
+		},
+		height: {
+			type: Number,
+			required: true,
+		},
+		weight: {
+			type: Number,
+			required: true,
+		},
+		profilePic: {
+			type: String,
+		},
+		password: {
+			type: String,
+			required: [true, "Password is required"],
+			minlength: [8, "Password must be 8 characters long"],
+		},
+		joiningReference: {
+			type: "String",
+			required: [true, "Joining Reference is required"],
+			enum: ["Pampelete", "Friends", "Flex Board", "Other"],
+			default: "Other",
+		},
+		goals: [
+			{
+				goal: {
+					type: String,
+					// required: true,
+				},
+			},
+		],
 		role: {
 			type: String,
 			enum: ["admin", "user"],
@@ -42,6 +86,12 @@ const userSchema = mongoose.Schema(
 					type: String,
 					required: true,
 				},
+			},
+		],
+		attendanceRecord: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Attendance",
 			},
 		],
 	},
@@ -86,5 +136,4 @@ userSchema.methods.verifyPassword = async function (password) {
 };
 
 const User = mongoose.model("User", userSchema);
-
 module.exports = User;

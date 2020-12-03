@@ -1,0 +1,9 @@
+export { default as Banner } from "./Banner";
+export { default as BodyInfo } from "./BodyInfo";
+export { default as GoalCard } from "./GoalCard";
+export { default as Goals } from "./Goals";
+export { default as Heading } from "./Heading";
+export { default as InputField } from "./InputField";
+export { default as PersonalDetails } from "./PersonalDetails";
+export { default as NewMember } from "./NewMember";
+export { default as Selfie } from "./Selfie";

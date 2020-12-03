@@ -1,0 +1,48 @@
+.selfie {
+	&__container {
+		width: 20rem;
+		height: 20rem;
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-family: var(--secondary-font);
+		line-height: 1.4;
+		color: var(--color-white);
+		text-transform: capitalize;
+	}
+
+	&__wrapper {
+		width: 45%;
+		margin: 4rem auto 1rem auto;
+		border: 5px dashed var(--color-white);
+		border-radius: 2rem;
+		padding: 2rem 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__placeholder {
+		img {
+			width: 20rem;
+			height: 20rem;
+		}
+	}
+
+	&__buttons {
+		text-align: center;
+	}
+
+	&__icons {
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	&__icon {
+		width: 3rem;
+		height: 3rem;
+		fill: var(--color-white);
+	}
+}

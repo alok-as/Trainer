@@ -1,0 +1,59 @@
+.attendance {
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: relative;
+
+	&__brand {
+		height: 18rem;
+		text-align: center;
+	}
+
+	&__logo {
+		width: 40%;
+		height: 100%;
+	}
+
+	&__form {
+		margin-top: 4rem;
+		text-align: center;
+	}
+
+	&__divider {
+		text-transform: uppercase;
+		color: var(--color-white);
+		position: relative;
+		font-family: var(--secondary-font);
+		font-weight: 500;
+		font-size: 1.4rem;
+		letter-spacing: 1px;
+		width: 5rem;
+		margin: 1.2rem auto;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 8rem;
+			height: 1px;
+			background-color: var(--color-white);
+		}
+
+		&::before {
+			left: -8rem;
+		}
+
+		&::after {
+			right: -8rem;
+		}
+	}
+
+	&__mark {
+		position: absolute;
+		bottom: 8rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+}

@@ -8,6 +8,10 @@
     "@testing-library/user-event": "^12.1.10",
     "aos": "^2.3.4",
     "axios": "^0.21.0",
+    "fast-speedtest-api": "^0.3.2",
+    "file-saver": "^2.0.5",
+    "network-js": "^2.1.0",
+    "network-speed": "^2.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1",
@@ -15,6 +19,7 @@
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "speedtest": "^1.1.0",
     "uuid": "^8.3.1",
     "web-vitals": "^0.2.4"
   },

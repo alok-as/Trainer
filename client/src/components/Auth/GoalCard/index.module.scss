@@ -1,0 +1,72 @@
+.card {
+	position: relative;
+	height: 15rem;
+	border: 0.5rem solid var(--color-white);
+	border-radius: 1.5rem;
+	cursor: pointer;
+
+	&__title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: var(--color-white);
+		font-weight: 700;
+		font-size: 2rem;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1.4;
+		letter-spacing: 2px;
+	}
+
+	&:hover &__cover {
+		opacity: 0.5;
+	}
+
+	&:hover &__wrap {
+		opacity: 1;
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__cover,
+	&__wrap {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__cover {
+		z-index: 10;
+		opacity: 0;
+		background-color: black;
+		opacity: 0;
+	}
+
+	&__wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 50;
+		opacity: 0;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__icon {
+		width: 4rem;
+		height: 4rem;
+		fill: green;
+	}
+}

@@ -1,0 +1,39 @@
+//npm speedtest
+// const checkSpeed = () => {
+// 	const register = document.querySelector("#register");
+// 	console.log("Dom ELemnet", register);
+// 	const speedTest = initSpeedTest({
+// 		el: register,
+// 		width: 800,
+// 		height: 370,
+// 	});
+// 	speedTest.on("complete", (results) => {
+// 		console.log("Results from speedTest", results);
+// 	});
+// };
+
+//npm fast-speedtest-api
+// const checkSpeed = () => {
+// 	let speedtest = new FastSpeedtest({
+// 		token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm", // required
+// 		verbose: false, // default: false
+// 		timeout: 10000, // default: 5000
+// 		urlCount: 5, // default: 5
+// 		bufferSize: 8, // default: 8
+// 		unit: FastSpeedtest.UNITS.Mbps, // default: Bps
+// 	});
+
+// 	speedtest
+// 		.getSpeed()
+// 		.then((s) => {
+// 			console.log(`Speed: ${s} Mbps`);
+// 		})
+// 		.catch((e) => {
+// 			console.error(e.message);
+// 		});
+// };
+
+
+// import initSpeedTest from "speedtest";
+// const FastSpeedtest = require("fast-speedtest-api");
+// import FastSpeedtest from "fast-speedtest-api";

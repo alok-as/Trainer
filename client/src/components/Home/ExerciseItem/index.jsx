@@ -1,7 +1,15 @@
 import React from "react";
 import classes from "./index.module.scss";
 
-const ExerciseItem = ({ image, subtitle, title, color, area }) => {
+const ExerciseItem = ({
+	delay,
+	easing,
+	image,
+	subtitle,
+	title,
+	color,
+	area,
+}) => {
 	return (
 		<div
 			className={classes.exercise}
@@ -9,6 +17,9 @@ const ExerciseItem = ({ image, subtitle, title, color, area }) => {
 				gridColumn: area,
 				color: color === "dark" ? "var(--color-black-1)" : "var(--color-white)",
 			}}
+			data-aos="fade-up"
+			data-aos-easing={easing}
+			data-aos-delay={delay}
 		>
 			<img
 				src={image}

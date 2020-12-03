@@ -1,0 +1,15 @@
+.body {
+	&__form {
+		margin-top: 3rem;
+	}
+
+	&__division {
+		display: flex;
+		margin-bottom: 2rem;
+		gap: 2rem;
+	}
+
+	&__field {
+		width: 100% !important;
+	}
+}

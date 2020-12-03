@@ -1,0 +1,12 @@
+.personal {
+	&__form {
+		margin-top: 3rem;
+	}
+
+	&__field {
+		width: 100% !important;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}

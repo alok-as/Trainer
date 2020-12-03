@@ -1,8 +1,16 @@
 import React from "react";
 import classes from "./index.module.scss";
 
-const Button = ({ children }) => {
-	return <button className={classes.button}>{children}</button>;
+const Button = ({ children, onClick, className }) => {
+	const finalClass = [classes.button];
+	if (className) {
+		finalClass.push(className);
+	}
+	return (
+		<button className={finalClass.join(" ")} onClick={onClick}>
+			{children}
+		</button>
+	);
 };
 
 export default Button;

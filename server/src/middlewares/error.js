@@ -22,7 +22,7 @@ const duplicateKeyErrorHandler = (err) => {
 const sendErrorResponse = (res, message) => {
 	const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 	res.status(statusCode);
-	res.json({ message });
+	res.json({ success: false, message });
 };
 
 const errorHandler = (error, req, res, next) => {

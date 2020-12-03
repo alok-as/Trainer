@@ -12,9 +12,10 @@ import image6 from "../../../assets/images/Home/Exercise/exercise-6.jpg";
 
 const Excercise = () => {
 	const [exercises, setExercises] = useState([
-		{ id: uuid(), image: image1 },
+		{ id: uuid(), delay: 300, image: image1 },
 		{
 			id: uuid(),
+			delay: 600,
 			image: image2,
 			subtitle: "Basic",
 			title: "Body balance",
@@ -22,6 +23,8 @@ const Excercise = () => {
 		},
 		{
 			id: uuid(),
+			delay: 1000,
+			easing: "ease-in-quad",
 			image: image3,
 			area: "3/5",
 			subtitle: "Work out",
@@ -30,6 +33,7 @@ const Excercise = () => {
 		},
 		{
 			id: uuid(),
+			delay: 300,
 			image: image4,
 			subtitle: "Goals",
 			title: "Weight Lifting",
@@ -37,13 +41,19 @@ const Excercise = () => {
 		},
 		{
 			id: uuid(),
+			delay: 600,
 			image: image5,
 			area: "2/4",
 			subtitle: "Start with basic",
 			title: "Power Overwhelming",
 			color: "light",
 		},
-		{ id: uuid(), image: image6 },
+		{
+			id: uuid(),
+			delay: 1000,
+			easing: "ease-in-quad",
+			image: image6,
+		},
 	]);
 	return (
 		<section className={classes.exercise}>
@@ -55,6 +65,8 @@ const Excercise = () => {
 				{exercises.map((exercise) => (
 					<ExerciseItem
 						key={exercise.id}
+						delay={exercise.delay}
+						easing={exercise.easing}
 						image={exercise.image}
 						subtitle={exercise.subtitle}
 						title={exercise.title}

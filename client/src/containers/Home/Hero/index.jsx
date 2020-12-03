@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 import classes from "./index.module.scss";
 import image1 from "../../../assets/images/Home/Hero/hero-1.jpg";
@@ -6,6 +6,9 @@ import Row from "../../../hoc/Row";
 import { Heading, Button, Icon } from "../../../components/UI";
 import sprites from "../../../assets/icons/sprites.svg";
 import { HeroCard } from "../../../components/Home";
+import { useDispatch, useSelector } from "react-redux";
+import { getContactCard } from "../../../redux/reducers/Testing/actions";
+import { saveAs } from "file-saver";
 
 const Hero = () => {
 	const [cards, setCards] = useState([
@@ -34,6 +37,25 @@ const Hero = () => {
 			color: "#f0494c",
 		},
 	]);
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getContactCard());
+	}, [dispatch]);
+
+	const { loading, error, card, name } = useSelector(
+		(state) => state.contactCard
+	);
+
+	const testing = () => {
+		const contactCard = new Blob([card], {
+			// type: "text/x-vCard;charset=iso-8859-1",
+			type: "text/vcard;charset=utf-8",
+		});
+		saveAs(contactCard, "AlokHero.vcf");
+	};
+
 	return (
 		<section className={classes.hero} id="hero">
 			<div className={classes.hero__slider}>
@@ -52,7 +74,7 @@ const Hero = () => {
 								<br /> Trainer
 							</Heading>
 							<div className={classes.slide__button}>
-								<Button>Read More</Button>
+								<Button onClick={testing}>Read More</Button>
 							</div>
 						</div>
 					</Row>

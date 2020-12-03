@@ -12,6 +12,7 @@ const Highlight = () => {
 	const [cards, setCards] = useState([
 		{
 			id: uuid(),
+			delay: 250,
 			image: image1,
 			title: "Body & Mind",
 			content:
@@ -20,13 +21,14 @@ const Highlight = () => {
 		{
 			id: uuid(),
 			image: image2,
-
+			delay: 500,
 			title: "Healthy Life",
 			content:
 				"Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean lorem sollicitudin, auci elit nascetur.",
 		},
 		{
 			id: uuid(),
+			delay: 750,
 			image: image3,
 			title: "Strategies",
 			content:
@@ -34,6 +36,7 @@ const Highlight = () => {
 		},
 		{
 			id: uuid(),
+			delay: 1000,
 			image: image4,
 			title: "Workout",
 			content:
@@ -46,6 +49,7 @@ const Highlight = () => {
 				{cards.map((card) => (
 					<HighlightCard
 						key={card.id}
+						delay={card.delay}
 						image={card.image}
 						title={card.title}
 						content={card.content}

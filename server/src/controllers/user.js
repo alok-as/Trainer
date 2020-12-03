@@ -1,11 +1,31 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user");
+const Attendance = require("../models/attendance");
+const vCardsJS = require("vcards-js");
 
 const registerUser = asyncHandler(async (req, res) => {
-	const user = new User(req.body);
+	const { phoneNumber, age, dateOfBirth } = req.body;
+	const user = new User({
+		...req.body,
+		password: `${phoneNumber}-${age}`,
+		dateOfBirth: new Date(dateOfBirth),
+	});
+
+	const attendance = new Attendance({
+		userId: user._id,
+		isPresent: true,
+	});
+
+	user.attendanceRecord = user.attendanceRecord.concat(attendance._id);
+
 	await user.save();
-	const token = await user.generateAuthToken();
-	res.status(201).send({ user, token });
+	await attendance.save();
+
+	res.status(201).send({
+		success: true,
+		message: "User Successfully Created",
+		user,
+	});
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -37,9 +57,30 @@ const logoutUser = asyncHandler(async (req, res) => {
 	});
 });
 
+const createContactCard = asyncHandler((req, res) => {
+	const vCard = vCardsJS();
+
+	vCard.firstName = "Alok";
+	vCard.middleName = "J";
+	vCard.lastName = "Sharma";
+	vCard.organization = "Techchefz Pvt Ltd";
+	vCard.workPhone = "8755595964";
+	vCard.birthday = new Date(1985, 0, 1);
+	vCard.title = "Software Developer";
+	vCard.note = "Notes by Alok Sharma";
+
+	res.set("Content-Type", 'text/vcard; name="contact.vcf"');
+	res.set("Content-Disposition", 'attachment; filename="contact.vcf"');
+	res.send({
+		vcard: vCard,
+		name: vCard.firstName,
+	});
+});
+
 module.exports = {
 	registerUser,
 	loginUser,
 	getUserProfile,
 	logoutUser,
+	createContactCard,
 };
