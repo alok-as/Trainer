@@ -9,11 +9,13 @@ export const register = (state = {}, action) => {
 		case actionTypes.REGISTER_USER_SUCCESS:
 			return {
 				loading: false,
+				success: true,
 				user: action.payload,
 			};
 		case actionTypes.REGISTER_USER_FAIL:
 			return {
 				loading: false,
+				success: false,
 				error: action.payload,
 			};
 		default:

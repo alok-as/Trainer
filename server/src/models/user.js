@@ -80,18 +80,23 @@ const userSchema = mongoose.Schema(
 			enum: ["admin", "user"],
 			default: "user",
 		},
+		currentPlan: {
+			type: String,
+			enum: ["General", "Couple", "Personal Training"],
+		},
+		expiresOn: {
+			type: Date,
+		},
+		isActive: {
+			type: Boolean,
+			default: false,
+		},
 		tokens: [
 			{
 				token: {
 					type: String,
 					required: true,
 				},
-			},
-		],
-		attendanceRecord: [
-			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: "Attendance",
 			},
 		],
 	},

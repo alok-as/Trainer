@@ -38,6 +38,8 @@ const Hero = () => {
 		},
 	]);
 
+	const [phoneNumber, setPhoneNumber] = useState("9999141612");
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {

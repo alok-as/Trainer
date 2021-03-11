@@ -1,0 +1,79 @@
+	const checkInputValidation = (step) => {
+		const nameRegex = /^[a-z ,.'-]+$/i;
+		const phoneRegex = /^\d{10}$/;
+		const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
+		const dateOfBirthRegex = /(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d/i;
+
+		let isNameValid,
+			isPhoneNumbeValid,
+			isEmailValid,
+			isAddressValid,
+			isDatOfBirthValid;
+
+		switch (step) {
+			case 1:
+				isNameValid = nameRegex.test(fields.name.value);
+				isPhoneNumbeValid = phoneRegex.test(fields.phoneNumber.value);
+				isEmailValid = emailRegex.test(fields.email.value);
+				isAddressValid = addressRegex.test(fields.address.value);
+				isDatOfBirthValid = dateOfBirthRegex.test(fields.dateOfBirth.value);
+
+				let nameError, phoneError, addressError, emailError, dateOfBirthError;
+
+				if (
+					isNameValid ||
+					isPhoneNumbeValid ||
+					isEmailValid ||
+					isAddressValid ||
+					isDatOfBirthValid
+				) {
+					return true;
+				}
+
+				if (!isNameValid) {
+					nameError = updatedObject(errors.name, {
+						name: "Name must be provided",
+					});
+				}
+
+				if (!isPhoneNumbeValid) {
+					phoneError = updatedObject(errors.name, {
+						phone: "Enter a valid Phone number",
+					});
+				}
+
+				if (!isEmailValid) {
+					emailError = updatedObject(errors.name, {
+						name: "Enter a valid email address",
+					});
+				}
+
+				if (!isAddressValid) {
+					addressError = updatedObject(errors.name, {
+						name: "Address must be provided",
+					});
+				}
+
+				if (!isDatOfBirthValid) {
+					dateOfBirthError = updatedObject(errors.name, {
+						name: "Enter a valid Birthday",
+					});
+				}
+
+				const updatedErrors = updatedObject(errors, {
+					nameError,
+					phoneError,
+					emailError,
+					addressError,
+					dateOfBirthError,
+				});
+
+				setErrors(updatedErrors);
+				return false;
+			case 2:
+				break;
+			default:
+				break;
+		}
+	};

@@ -1,0 +1,50 @@
+
+// const schedulePaymentReminder = (currentDate, paymentPeriod, email, name) => {
+// 	let reminderDate;
+
+// 	switch (paymentPeriod) {
+// 		case "Monthly":
+// 			reminderDate = currentDate.setSeconds(currentDate.getSeconds() + 15);
+// 			break;
+// 		case "Quaterly":
+// 			reminderDate = currentDate.setSeconds(currentDate.getSeconds() + 60);
+// 			break;
+// 		case "Half-Yearly":
+// 			reminderDate = currentDate.setSeconds(currentDate.getSeconds() + 60);
+// 			break;
+// 		case "Annually":
+// 			reminderDate = currentDate.setSeconds(currentDate.getSeconds() + 60);
+// 			break;
+// 		default:
+// 			break;
+// 	}
+
+// 	schedule.scheduleJob(reminderDate, async () => {
+// 		const user = await User.findOne({ email });
+// 		user.isActive = false;
+// 		await user.save();
+
+// 		sendPaymentRemiderEmail(email, name);
+// 		console.log(
+// 			"Payment Reminder Email Sent Successfully",
+// 			new Date(reminderDate).toString()
+// 		);
+// 	});
+// };
+
+// const remindUsersForPayment = () => {
+// 	const
+// };
+
+
+// const getDaysInMonth = (month, year) => {
+// 	const days = new Date(year, month, 0).getDate();
+// 	return days;
+// };
+// const newArr = [];
+// for (let i = 1; i <= noOfDays; i++) {
+// 	newArr.push({
+// 		date: new Date(`${currentMonth}/${i}/${currentYear}`),
+// 		isPresent: false,
+// 	});
+// }

@@ -1,9 +1,10 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user");
 const Attendance = require("../models/attendance");
+const { formatDate } = require("../utility/payments");
 
 const markAttendance = asyncHandler(async (req, res) => {
-	const { type, _id, phoneNumber, date, date2 } = req.body;
+	const { type, _id, phoneNumber } = req.body;
 	let user;
 
 	switch (type) {
@@ -43,34 +44,39 @@ const markAttendance = asyncHandler(async (req, res) => {
 		isPresent: true,
 		date: today,
 	});
-	user.attendanceRecord = user.attendanceRecord.concat(attendance._id);
-
-	await user.save();
 	await attendance.save();
 
 	res.status(200).send({
 		success: true,
 		message: "Attendance Marked Successfully",
+		attendance,
 	});
 });
 
-const getAllAttendance = asyncHandler(async (req, res) => {
-	const { _id } = req.body;
-	const user = await User.findById(_id);
+const getAllUserAttendance = asyncHandler(async (req, res) => {
+	const { _id } = req.params;
+	const { month, year } = req.body;
+
+	const user = await User.findById(_id).lean();
 
 	if (!user) {
 		throw new Error("User doesn't Exist");
 	}
 
-	await user.populate("attendanceRecord").execPopulate();
+	const attendanceRecord = await Attendance.find({ userId: _id }).lean();
+
+	const transformedRecords = attendanceRecord.map((record) => {
+		return { ...record, date: formatDate(record.date) };
+	});
+
 	res.send({
 		success: true,
 		message: "Attendance Fetched Successfully",
-		attendanceRecord: user.attendanceRecord,
+		attendanceRecord: transformedRecords,
 	});
 });
 
 module.exports = {
 	markAttendance,
-	getAllAttendance,
+	getAllUserAttendance,
 };

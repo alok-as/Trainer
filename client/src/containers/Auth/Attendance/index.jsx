@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { markAttendance } from "../../../redux/reducers/Auth/actions";
-import { getTodaysDate } from "../../../utility";
 import classes from "./index.module.scss";
 import logo from "../../../assets/images/Auth/logo.jpg";
 import { InputField } from "../../../components/Auth";
 import { Button } from "../../../components/UI";
 
-const Attendance = () => {
+const Attendance = ({ match, history }) => {
 	const [memberId, setMemberId] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("8755595964");
 
@@ -19,11 +18,13 @@ const Attendance = () => {
 			const info = {
 				phoneNumber,
 				type: "phoneNumber",
-				date: new Date(),
-				date2: getTodaysDate(),
 			};
 
 			dispatch(markAttendance(info));
+			history.push({
+				pathname: "/auth/user/thankyou",
+				state: { title: "attendance" },
+			});
 		}
 	};
 

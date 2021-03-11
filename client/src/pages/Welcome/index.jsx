@@ -11,7 +11,7 @@ const Welcome = ({ history, match }) => {
 	return (
 		<section className={classes.welcome}>
 			<NewMember switchToRegister={switchToRegisterForm} />
-			<Attendance />
+			<Attendance history={history} match={match} />
 		</section>
 	);
 };

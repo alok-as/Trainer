@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 
 import strength from "../../../assets/images/Auth/strength.png";
@@ -8,7 +9,7 @@ import fat from "../../../assets/images/Auth/fat.png";
 import fit from "../../../assets/images/Auth/fit.png";
 
 import classes from "./index.module.scss";
-import { updatedObject } from "../../../utility";
+import { dataURItoBlob, updatedObject } from "../../../utility";
 import { registerUser } from "../../../redux/reducers/Auth/actions";
 
 import {
@@ -19,8 +20,9 @@ import {
 } from "../../../components/Auth";
 import { Button } from "../../../components/UI";
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
 	const [step, setStep] = useState(1);
+	const history = useHistory();
 
 	const [fields, setFields] = useState({
 		name: {
@@ -132,7 +134,6 @@ const RegisterForm = () => {
 	};
 
 	const changeStep = (step) => {
-		//Form Validation Left
 		setStep(step);
 	};
 
@@ -141,7 +142,18 @@ const RegisterForm = () => {
 	};
 
 	const dispatch = useDispatch();
-	// const { loading, user, error } = useSelector((state) => state.register);
+	const { loading, user, error, success } = useSelector(
+		(state) => state.register
+	);
+
+	const checkFormValidation = (step) => {
+		switch (step - 1) {
+			case 1:
+				break;
+			default:
+				break;
+		}
+	};
 
 	const submitForm = () => {
 		const formData = new FormData();
@@ -155,89 +167,14 @@ const RegisterForm = () => {
 		formData.append("gender", fields.gender.value);
 		formData.append("weight", fields.weight.value);
 		formData.append("height", fields.height.value);
+		formData.append("profilePic", dataURItoBlob(selfie));
 
 		dispatch(registerUser(formData));
+		history.push({
+			pathname: "/auth/user/thankyou",
+			state: { title: "register" },
+		});
 	};
-
-	// const checkInputValidation = (step) => {
-	// 	const nameRegex = /^[a-z ,.'-]+$/i;
-	// 	const phoneRegex = /^\d{10}$/;
-	// 	const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-	// 	const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
-	// 	const dateOfBirthRegex = /(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d/i;
-
-	// 	let isNameValid,
-	// 		isPhoneNumbeValid,
-	// 		isEmailValid,
-	// 		isAddressValid,
-	// 		isDatOfBirthValid;
-
-	// 	switch (step) {
-	// 		case 1:
-	// 			isNameValid = nameRegex.test(fields.name.value);
-	// 			isPhoneNumbeValid = phoneRegex.test(fields.phoneNumber.value);
-	// 			isEmailValid = emailRegex.test(fields.email.value);
-	// 			isAddressValid = addressRegex.test(fields.address.value);
-	// 			isDatOfBirthValid = dateOfBirthRegex.test(fields.dateOfBirth.value);
-
-	// 			let nameError, phoneError, addressError, emailError, dateOfBirthError;
-
-	// 			if (
-	// 				isNameValid ||
-	// 				isPhoneNumbeValid ||
-	// 				isEmailValid ||
-	// 				isAddressValid ||
-	// 				isDatOfBirthValid
-	// 			) {
-	// 				return true;
-	// 			}
-
-	// 			if (!isNameValid) {
-	// 				nameError = updatedObject(errors.name, {
-	// 					name: "Name must be provided",
-	// 				});
-	// 			}
-
-	// 			if (!isPhoneNumbeValid) {
-	// 				phoneError = updatedObject(errors.name, {
-	// 					phone: "Enter a valid Phone number",
-	// 				});
-	// 			}
-
-	// 			if (!isEmailValid) {
-	// 				emailError = updatedObject(errors.name, {
-	// 					name: "Enter a valid email address",
-	// 				});
-	// 			}
-
-	// 			if (!isAddressValid) {
-	// 				addressError = updatedObject(errors.name, {
-	// 					name: "Address must be provided",
-	// 				});
-	// 			}
-
-	// 			if (!isDatOfBirthValid) {
-	// 				dateOfBirthError = updatedObject(errors.name, {
-	// 					name: "Enter a valid Birthday",
-	// 				});
-	// 			}
-
-	// 			const updatedErrors = updatedObject(errors, {
-	// 				nameError,
-	// 				phoneError,
-	// 				emailError,
-	// 				addressError,
-	// 				dateOfBirthError,
-	// 			});
-
-	// 			setErrors(updatedErrors);
-	// 			return false;
-	// 		case 2:
-	// 			break;
-	// 		default:
-	// 			break;
-	// 	}
-	// };
 
 	let form = null;
 	let buttons = null;

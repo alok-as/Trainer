@@ -26,13 +26,14 @@ const sendErrorResponse = (res, message) => {
 };
 
 const errorHandler = (error, req, res, next) => {
+	console.log("Error from Storage", error);
 	let message = error.message;
 
-	if (error.name.includes("ValidationError")) {
-		message = validatationErrorHandler(error);
-	} else if (error.code === 11000) {
-		message = duplicateKeyErrorHandler(error);
-	}
+	// if (error.name.includes("ValidationError")) {
+	// 	message = validatationErrorHandler(error);
+	// } else if (error.code === 11000) {
+	// 	message = duplicateKeyErrorHandler(error);
+	// }
 
 	sendErrorResponse(res, message);
 };

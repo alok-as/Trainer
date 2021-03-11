@@ -38,6 +38,7 @@ const Selfie = ({ isSelfieTaking, setIsSelfieTaking, selfie, setSelfie }) => {
 								height={"100%"}
 								width={"100%"}
 								ref={webcamRef}
+								mirrored={true}
 								screenshotFormat="image/jpeg"
 								videoConstraints={videoConstraints}
 							/>

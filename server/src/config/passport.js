@@ -10,8 +10,6 @@ const opts = {
 
 const strategy = new Strategy(opts, async (req, payload, done) => {
 	try {
-		console.log("Jwt", req);
-		console.log("Passport Payload", payload);
 		const user = await User.findOne({ _id: payload._id });
 		if (!user) {
 			return done(null, false);

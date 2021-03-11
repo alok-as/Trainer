@@ -12,11 +12,7 @@ import { Banner } from "../../components/Auth";
 import { RegisterForm } from "../../containers/Auth";
 
 const Register = ({ history, match }) => {
-	const [slides, setSlides] = useState([
-		{ id: uuid(), image: banner1 },
-		// { id: uuid(), image: banner2 },
-		// { id: uuid(), image: banner3 },
-	]);
+	const [slides, setSlides] = useState([{ id: uuid(), image: banner1 }]);
 
 	const switchToWelcome = () => {
 		history.replace("/auth/user");
@@ -29,7 +25,7 @@ const Register = ({ history, match }) => {
 					icon={`${sprites}#icon-keyboard_arrow_left`}
 					iconStyle={classes.register__icon}
 				/>
-				<span> Back</span>
+				<span>Back</span>
 			</div>
 			<Banner slides={slides} />
 			<RegisterForm />

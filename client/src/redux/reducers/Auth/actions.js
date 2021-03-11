@@ -33,6 +33,9 @@ export const markAttendance = (info) => async (dispatch, getState, axios) => {
 
 		const { data } = await axios.post(`${endpoints.attendance}`, info);
 		console.log("Attendance Data", data);
+		// dispatch({
+		// 	type: actionTypes.ATTENDANCE_USER_SUCCESS,
+		// });
 	} catch (error) {
 		const payload =
 			error.response && error.response.data.message

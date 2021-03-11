@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { Header, HeaderFixed, Footer } from "../../containers";
 import { Sidebar, ScrollToTop } from "../../components/UI";
 import { Home, Gallery } from "../../pages";
+import Testing from "../../pages/Testing";
 
 const Layout = () => {
 	const [isNavbarVisible, setIsNavbarVisible] = useState(false);

@@ -11,8 +11,12 @@ const Goals = ({ cards }) => {
 				We'll help you acheive that.
 			</Heading>
 			<div className={classes.goals__cards}>
-				{cards.map((card) => (
-					<GoalCard title={card.title} image={card.image} />
+				{cards.map((card, index) => (
+					<GoalCard
+						title={card.title}
+						image={card.image}
+						id={`goal${index + 1}`}
+					/>
 				))}
 			</div>
 		</section>
